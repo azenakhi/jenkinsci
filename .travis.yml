@@ -11,7 +11,7 @@ script:
   - docker build -f Dockerfile -t $REPO:$COMMIT .
 
 after_success:
-  - docker login -u $DOCKER_USER -p $DOCKER_PASS
+  - docker login -u $DOCKER_USE -p $DOCKER_PAS
   - export TAG=`if [ "$TRAVIS_BRANCH" == "master" ]; then cat Version; else (echo $TRAVIS_BRANCH) ; fi`
   - docker tag $REPO:$COMMIT $REPO:$TAG
   - docker push $REPO:$TAG
