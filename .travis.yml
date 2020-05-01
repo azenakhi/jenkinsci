@@ -9,7 +9,7 @@ virtualenv:
     system_site_package: true
     
 script:
- - python -m 'import flask'
+ - python -m 'json'
 notifications:
   email: 
     - ahmed.zenakhi@gmail.com
