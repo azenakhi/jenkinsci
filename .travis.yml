@@ -17,6 +17,6 @@ script:
 after_success:
   - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
   - echo $?
-  - export TAG=`if [ "$TRAVIS_BRANCH" == "master" ]; then cat Version; else (echo $TRAVIS_BRANCH) ; fi`
+  - export TAG=`if [ "$TRAVIS_BRANCH" == "master" ]; then cat Version; else (echo $COMMIT) ; fi`
   - docker tag $REPO:$COMMIT $REPO:$TAG
   - docker push $REPO:$TAG
