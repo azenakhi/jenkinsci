@@ -9,7 +9,7 @@ virtualenv:
     system_site_package: true
     
 script:
- - python -m 'json'
+ - pip freeze
 notifications:
   email: 
     - ahmed.zenakhi@gmail.com
